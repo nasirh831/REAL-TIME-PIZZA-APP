@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Connect Database
-const url='mongodb://localhost/pizza';
+const url=process.env.MONGODB_URL || 'mongodb://localhost/pizza';
 
 mongoose.connect(url,{ useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true ,
 useFindAndModify:true});

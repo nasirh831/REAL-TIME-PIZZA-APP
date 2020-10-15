@@ -312,12 +312,11 @@ body {
 }
 
 nav li:last-child a {
-  transition: all 0.3s ease-in-out;
-  background-color: #FE5F1E;
+  background: #FE5F1E;
 }
 
 nav li:last-child a:hover {
-  background-color: #B23301;
+  background: #B23301;
 }
 
 nav li a {
@@ -333,12 +332,12 @@ section.hero {
 }
 
 .size {
-  background-color: #F8F8F8;
+  background: #F8F8F8;
 }
 
 .add-to-cart {
   border: 2px solid #FE5F1E;
-  color: #B23301;
+  color: #FE5F1E;
   transition: all 0.3s ease-in-out;
 }
 
@@ -358,7 +357,7 @@ section.hero {
 }
 
 .btn-primary:hover {
-  background-color: #B23301;
+  background: #B23301;
 }
 
 section.cart {
@@ -371,12 +370,11 @@ section.cart .amount {
 
 section.login {
   background: #F8F8F8;
-  min-height: calc(100vh-86px);
+  min-height: calc(100vh - 86px);
 }
 
 section.login a {
   color: #FE5F1E;
-  transition: all 0.3s ease-in-out;
 }
 
 section.login a:hover {
@@ -394,11 +392,15 @@ a.link {
 
 section.status {
   background: #F8F8F8;
-  min-height: calc(100vh-80px);
+  min-height: calc(100vh - 86px);
 }
 
 .status-box {
   padding: 60px 0 0;
+}
+
+.status-box ul {
+  margin-left: 84px;
 }
 
 .status-box ul li span {
@@ -420,7 +422,6 @@ section.status {
 }
 
 .status-box ul li span:before {
-  content: "\F46C";
   font-family: "Line Awesome Free";
   font-size: 46px;
   font-weight: 600;
@@ -429,10 +430,6 @@ section.status {
   top: 50%;
   transform: translateY(-50%);
   color: inherit;
-}
-
-.status-box ul {
-  margin-left: 84px;
 }
 
 .status-box ul li:nth-child(1) span:before {
@@ -471,7 +468,7 @@ section.status {
 }
 
 .status-box ul li:nth-child(5) span:after {
-  box-shadow: 0px 20px 1px 20px #F8F8F8;
+  box-shadow: 0 20px 1px 20px #F8F8F8;
 }
 
 .status-box ul li.step-completed:before {
@@ -486,17 +483,35 @@ section.status {
   color: #ccc;
 }
 
-.status-box ul li.current span:after {
-  background: #FE5F1E;
-}
-
 .status-box ul li.current span {
   color: #FE5F1E;
+}
+
+.status-box ul li.current span:after {
+  background: #FE5F1E;
 }
 
 .status-box ul li small {
   float: right;
   font-size: 14px;
   margin-top: 8px;
+}
+
+@media (max-width: 1060px) {
+  .container {
+    max-width: 90%;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .status-box ul li span:before {
+    font-size: 34px;
+  }
 }
 

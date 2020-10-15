@@ -2,118 +2,109 @@
 @import '~noty/src/noty.scss';
 @import '~noty/src/themes/mint.scss';
 
-
-body{
-    font-family:'Lato',sans-serif;
-    -webkit-font-smoothing:antialiased;
-    color:$dark
+body {
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: $dark;
 }
 
-nav li:last-child a{
-    transition: $smooth;
-    background-color: $primary;
+nav li:last-child a {
+    background: $primary;
     &:hover {
-        background-color: $primary-hover;
+        background: $primary-hover;
     }
 }
+
 nav li a {
     transition: $smooth;
-    &:hover{
-        color:$primary;
+    &:hover {
+        color: $primary;
     }
 }
-
-section.hero{
-    background:$secondary;
+section.hero {
+    background: $secondary;
 }
-
-.size{
-    background-color: $secondary;
+.size {
+    background: $secondary;
 }
-
-.add-to-cart{
+.add-to-cart {
     border: 2px solid $primary;
-    color:$primary-hover;
-    transition: $smooth;
-    &:hover{
-        background:$primary;
-        border-color: $pure;
-        color:$pure;
-    }
-    &:focus{
-        outline:none;
-    }
-}
-
-.btn-primary{
-    background:$primary;
+    color: $primary;
     transition: $smooth;
     &:hover {
-        background-color: $primary-hover;
+        background: $primary;
+        border-color: $pure;
+        color: $pure;
+    }
+    &:focus {
+        outline: none;
     }
 }
 
-section.cart{
-    background:$secondary;
-    .amount{
-        color:$primary;
+.btn-primary {
+    background: $primary;
+    transition: $smooth;
+    &:hover {
+        background: $primary-hover;
     }
 }
 
-section.login{
-    background:$secondary;
-    min-height: calc(100vh-86px);
-    a{
-        color:$primary;
-        transition: $smooth;
+section.cart {
+    background: $secondary;
+    .amount {
+        color: $primary;
+    }
+}
+
+section.login {
+    background: $secondary;
+    min-height: calc(100vh - 86px);
+    a {
+        color: $primary;
         &:hover {
             color: $primary-hover;
-        } 
+        }
     }
 }
-
 .noty_theme__mint {
     border-radius: 50px!important;
     padding-left: 8px!important;
 }
 
-a.link{
+a.link {
     color: $primary;
 }
 
 section.status {
-    background : $secondary;
-    min-height: calc(100vh-80px);
+    background: $secondary;
+    min-height: calc(100vh - 86px);
 }
-
 .status-box {
     padding: 60px 0 0;
 }
-
+.status-box ul {
+    margin-left: 84px;
+}
 .status-box ul li span {
     position: relative;
     padding-left: 20px;
 }
-
-//Dots
-
-.status-box ul li span:after{
+// Dots
+.status-box ul li span:after {
     content: '';
     position: absolute;
     left: -10px;
-    top: 50%;
+    top:50%;
     background: $dark;
     width: 10px;
     height: 10px;
     border-radius: 50%;
     transform: translateY(-50%);
-    box-shadow: 0 0 1px 10px $secondary;
+    box-shadow:0 0 1px 10px $secondary;
 }
 
-//Icons
-
+// Icons
 .status-box ul li span:before{
-    content: '\f46c';
     font-family: "Line Awesome Free";
     font-size: 46px;
     font-weight: 600;
@@ -123,81 +114,87 @@ section.status {
     transform: translateY(-50%);
     color: inherit;
 }
-.status-box ul{
-    margin-left: 84px;
-}
-
-.status-box ul li:nth-child(1) span:before{
+.status-box ul li:nth-child(1) span:before {
     content: '\f46c';
 }
-.status-box ul li:nth-child(2) span:before{
+
+.status-box ul li:nth-child(2) span:before {
     content: '\f560';
 }
-.status-box ul li:nth-child(3) span:before{
+
+.status-box ul li:nth-child(3) span:before {
     content: '\f818';
 }
-.status-box ul li:nth-child(4) span:before{
+
+.status-box ul li:nth-child(4) span:before {
     content: '\f0d1';
 }
-.status-box ul li:nth-child(5) span:before{
+
+.status-box ul li:nth-child(5) span:before {
     content: '\f582';
 }
-//Line
-.status-box ul li{
+.status-box ul li {
     position: relative;
 }
-
+// Line
 .status-box ul li:before {
-    content:'';
-    position: absolute;
-    top: 0;
-    left: -6px;
-    width: 2px;
-    height: 100%;
-    background: $dark;
-    margin-top: 10px;
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -6px;
+   width: 2px;
+   height: 100%;
+   background: $dark;
+   margin-top: 10px;
+}
+// Last dot
+.status-box ul li:nth-child(5) span:after {
+    box-shadow:0 20px 1px 20px $secondary;
 }
 
-
-//Last dot
-
-.status-box ul li:nth-child(5) span:after{
-    box-shadow: 0px 20px 1px 20px $secondary;
-}
-//----step completed---------
-//Line Gray
-.status-box ul li.step-completed:before{
-    background:$gray;
-
-}
-//Dot Gray
-.status-box ul li.step-completed span:after{
-    background:$gray;
-    
+// line
+.status-box ul li.step-completed:before {
+    background: $gray;
 }
 
-//text
-.status-box ul li.step-completed span{
-    color:$gray;
-    
+// dots
+.status-box ul li.step-completed span:after {
+    background: $gray;
 }
 
-//----current---------
-
-//Dot 
-.status-box ul li.current span:after{
-    background:$primary;
-    
+// text
+.status-box ul li.step-completed span {
+    color: $gray;
 }
 
-//text
-.status-box ul li.current span{
-    color:$primary;
-    
+// Current status
+.status-box ul li.current span {
+    color: $primary;
 }
 
-.status-box ul li small{
+.status-box ul li.current span:after {
+    background: $primary;
+}
+
+.status-box ul li small {
     float: right;
     font-size: 14px;
     margin-top: 8px;
+}
+
+@media(max-width:1060px) {
+    .container {
+        max-width: 90%;
+    }
+    table {
+       display: block;
+       overflow-x: auto;
+       white-space: nowrap;
+    }
+}
+
+@media(max-width: 768px) {
+    .status-box ul li span:before {
+        font-size: 34px;
+    }
 }
