@@ -18,9 +18,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Connect Database
-const url=process.env.MONGODB_URL || 'mongodb://localhost/pizza';
 
-mongoose.connect(url,{ useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true ,
+mongoose.connect(process.env.MONGO_CONNECTION_URL,{ useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true ,
 useFindAndModify:true});
 const connection = mongoose.connection;
 
@@ -77,6 +76,10 @@ app.set('views',path.join(__dirname,'/resources/views'))
 app.set('view engine','ejs')
 
 require('./routes/web')(app)
+
+app.use((req,res) =>{
+    res.status(404).render('errors/404')
+})
 
 const server = app.listen(PORT,()=>{
     console.log(`Listening on Port: ${PORT}`)
